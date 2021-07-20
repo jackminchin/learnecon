@@ -1,16 +1,3 @@
-# Welcome to your Jupyter Book
+# Welcome to Learn Econ
 
-This is a small sample book to give you a feel for how book content is
-structured.
-
-:::{note}
-Here is a note!
-:::
-
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+This book intends to serve as both an introduction to economics for the unfamiliar, but interested, reader. It will also delve further, providing deeper - more technical - insights, concepts and techniques.
