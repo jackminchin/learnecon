@@ -6,5 +6,9 @@ root: intro
 parts:
   - caption: Macroeconomics
     chapters:
-    - file: parts/introduction/intro
+    - file: parts/macroeconomics/intro
+  - caption: Econometric Theory
+    chapters:
+    - file: parts/econometric-theory/introduction
+    - file: parts/econometric-theory/linearmodels
 
