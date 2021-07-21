@@ -131,4 +131,26 @@ y=x^{\prime} A x, & \frac{\partial y}{\partial x}=2 A x, \quad \frac{\partial^{2
 $$
 ```
 
-So, from the conventional 
+So, from the conventions above $
+\frac{\partial A b}{\partial b}=A^{\prime} \quad ; \quad \frac{\partial b^{\prime} A b}{\partial b}=2 A b,
+$ we can write:
+
+$$
+\frac{\partial R S S}{\partial \hat{\beta}}=-2 X^{\prime} y+2 X^{\prime} X \hat{\beta}
+$$
+
+Equating this to 0, as per the first order conditions, gives:
+
+$$
+X^{\prime} X \hat{\beta}=X^{\prime} y
+$$
+
+and, solving for $\hat \beta$ we can derive the OLS estimator:$$
+\hat{\beta}=\left(X^{\prime} X\right)^{-1} X^{\prime} y
+$$
+
+Now, here's where some of the assumptions come in, $(X'X)^{-1}$ must exist given the assumptoin that $X$ has full column rank $k$.  Also, note that the second order conditions are satisfied: 
+
+$$
+\frac{\partial^{2} R S S}{\partial \hat{\beta} \partial \hat{\beta}^{\prime}}=2 X^{\prime} X>0 \text { (i.e. is a positive definite matrix) }
+$$

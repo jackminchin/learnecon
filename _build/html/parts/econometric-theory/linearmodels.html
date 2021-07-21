@@ -322,7 +322,26 @@ y=x^{\prime} A x, &amp; \frac{\partial y}{\partial x}=2 A x, \quad \frac{\partia
 \end{array}
 \end{split}\]</div>
 </div>
-<p>So, from the conventional</p>
+<p>So, from the conventions above <span class="math notranslate nohighlight">\(
+\frac{\partial A b}{\partial b}=A^{\prime} \quad ; \quad \frac{\partial b^{\prime} A b}{\partial b}=2 A b,
+\)</span> we can write:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial R S S}{\partial \hat{\beta}}=-2 X^{\prime} y+2 X^{\prime} X \hat{\beta}
+\]</div>
+<p>Equating this to 0, as per the first order conditions, gives:</p>
+<div class="math notranslate nohighlight">
+\[
+X^{\prime} X \hat{\beta}=X^{\prime} y
+\]</div>
+<p>and, solving for <span class="math notranslate nohighlight">\(\hat \beta\)</span> we can derive the OLS estimator:$<span class="math notranslate nohighlight">\(
+\hat{\beta}=\left(X^{\prime} X\right)^{-1} X^{\prime} y
+\)</span>$</p>
+<p>Now, here’s where some of the assumptions come in, <span class="math notranslate nohighlight">\((X'X)^{-1}\)</span> must exist given the assumptoin that <span class="math notranslate nohighlight">\(X\)</span> has full column rank <span class="math notranslate nohighlight">\(k\)</span>.  Also, note that the second order conditions are satisfied:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^{2} R S S}{\partial \hat{\beta} \partial \hat{\beta}^{\prime}}=2 X^{\prime} X&gt;0 \text { (i.e. is a positive definite matrix) }
+\]</div>
 </div>
 
     <script type="text/x-thebe-config">
