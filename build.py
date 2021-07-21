@@ -1,2 +1,2 @@
 import os
-os.system('jupyter-book build .')
+os.system('jupyter-book build . --all')

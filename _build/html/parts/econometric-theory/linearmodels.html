@@ -183,6 +183,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Linear Regression Model
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordinary-least-squares-estimation">
+   Ordinary Least Squares Estimation
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -193,12 +211,118 @@
                 
   <div class="section" id="the-linear-regression-model">
 <h1>The Linear Regression Model<a class="headerlink" href="#the-linear-regression-model" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is best read by someone with basic knowledge of linear algebra and calculus.</p>
+</div>
 <p>The linear regression model concerns itself with modelling a multivariate linear relationship between an endogenous (or dependent) variable which is denotes as <span class="math notranslate nohighlight">\(y_t\)</span>, and a number of exogenous (or explanatory) variables, denoted <span class="math notranslate nohighlight">\(x_{ti}\)</span>, observed across <span class="math notranslate nohighlight">\(t = 1, 2, ... , T\)</span>. In a model with <span class="math notranslate nohighlight">\(k\)</span> exogenous variables, the liner regression model is specified:</p>
 <div class="math notranslate nohighlight">
-\[ y_t = \beta_1 x_{t1} + \beta_2 x_{t2} + ... + \beta_{k} x_{tk}\]</div>
+\[ y_t = \beta_1 x_{t1} + \beta_2 x_{t2} + ... + \beta_{k} x_{tk} + u_t\]</div>
 <p>Typically, econometricians add a constant term, setting <span class="math notranslate nohighlight">\(x_{t1} = 1\)</span> for all <span class="math notranslate nohighlight">\(t\)</span>, such that the specification can be written:</p>
 <div class="math notranslate nohighlight">
-\[ y_t = \beta_1 + \beta_2 x_{t2} + ... + \beta_{k} x_{tk}\]</div>
+\[ y_t = \beta_1 + \beta_2 x_{t2} + ... + \beta_{k} x_{tk} + u_t\]</div>
+<p><span class="math notranslate nohighlight">\(u_t\)</span> is unobserved, or stochastic, error term. For the ordinary least squares estimator to work, it must satisfy the following three assumptions:</p>
+<div class="math notranslate nohighlight">
+\[E(u_t) = 0 \;\; \forall \; t\]</div>
+<p>This is to say that the expectation, or mean, of the errors should always be zero.</p>
+<div class="math notranslate nohighlight">
+\[V(u_t) = \sigma^2 \;\; \forall \; t\]</div>
+<p>This means that the variance should always equal <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[C(u_t, u_s) = 0 \;\; \forall \; t\]</div>
+<p>Finally, there should never be any covariance between any of the explanatory variables.</p>
+<p>Additionally, there are two further assumptions that the explanatory (read: exogenous or independent) variables must satisfy:</p>
+<ol class="simple">
+<li><p>The explanatory variables must be nonstochastic, this means that they must not be random.</p></li>
+<li><p>They must be linearly independent of one another.</p></li>
+</ol>
+<p>The multivariate linear regression model can be expressed in the language of linear algebra, that of matrices and vectors. In matrix form, the regression specification be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \left[\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{T}
+\end{array}\right]=\left[\begin{array}{cccc}
+1 &amp; x_{12} &amp; \ldots &amp; x_{1 k} \\
+1 &amp; x_{22} &amp; \ldots &amp; x_{2 k} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+1 &amp; x_{T 2} &amp; \ldots &amp; x_{T k}
+\end{array}\right]\left[\begin{array}{c}
+\beta_{1} \\
+\beta_{2} \\
+\vdots \\
+\beta_{k}
+\end{array}\right]+\left[\begin{array}{c}
+u_{1} \\
+u_{2} \\
+\vdots \\
+u_{T}
+\end{array}\right]\end{split}\]</div>
+<p>or, more simply, <span class="math notranslate nohighlight">\(y = X \beta + u\)</span>.</p>
+<p>In this new language, we can state the assumptions slightly differently:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(u) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V(u)=E\left[(u-E(u))(u-E(u))^{\prime}\right]=E\left(u u^{\prime}\right)=\sigma^{2} I_{T}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span> is nonstochastic with full column rank (<span class="math notranslate nohighlight">\(k &lt; T\)</span>)</p></li>
+</ol>
+<p>From this matrix form, we can consider how to estimate the parameter <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+</div>
+<div class="section" id="ordinary-least-squares-estimation">
+<h1>Ordinary Least Squares Estimation<a class="headerlink" href="#ordinary-least-squares-estimation" title="Permalink to this headline">¶</a></h1>
+<p>The method of OLS estimation chooses the values for the <span class="math notranslate nohighlight">\(\beta\)</span> parameters in the model in order minimize the residuals sum of squares. That is the squared error term added for each time period.</p>
+<div class="math notranslate nohighlight">
+\[ \max \sum_{t=1}^{T} \hat u_t^2 \]</div>
+<p>In matrix form, this can be written as:</p>
+<div class="math notranslate nohighlight">
+\[ \text{choose } \hat \beta \text{ to minimise } RSS = \hat u'\hat u\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat u = y - X \hat \beta\)</span>$</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>What is <span class="math notranslate nohighlight">\(u'\)</span>?</strong></p>
+<p>The apostrophe, or ‘prime’ symbol notes the transpose of the matrix that it appended to. This means that we flip the matrix’s columns and rows such that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ll}1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6\end{array}\right]^{\mathrm{T}}=\left[\begin{array}{lll}1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6\end{array}\right]\end{split}\]</div>
+</div>
+<p>Now,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned} R S S &amp;=\hat{u}^{\prime} \hat{u}=(y-X \hat{\beta})^{\prime}(y-X \hat{\beta}) \\ &amp;=\left(y^{\prime}-\hat{\beta}^{\prime} X^{\prime}\right)(y-X \hat{\beta}) \\ &amp;=y^{\prime} y-y^{\prime} X \hat{\beta}-\hat{\beta}^{\prime} X^{\prime} y+\hat{\beta}^{\prime} X^{\prime} X \hat{\beta} \\ &amp;=y^{\prime} y-2 y^{\prime} X \hat{\beta}+\hat{\beta}^{\prime} X^{\prime} X \hat{\beta} \end{aligned}\end{split}\]</div>
+<p>The last line follows because <span class="math notranslate nohighlight">\(\hat \beta' X' y\)</span> is a scalar.</p>
+<p>As mentioned, our aim is to minimise the residual sum of squares. The first order condition for this problem is:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial R S S}{\partial \hat{\beta}}=0
+\]</div>
+<p>In order to achieve this, we must obtain a <span class="math notranslate nohighlight">\(k\)</span> dimensional vector of partial derivatives.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Differentiation involving matrices proceeds using standard calculus applied to the
+relevant elements in turn. In terms of arranging the results, a number of conventions
+apply. If <span class="math notranslate nohighlight">\(y = f(x)\)</span> with <span class="math notranslate nohighlight">\(y\)</span> a scalar and <span class="math notranslate nohighlight">\(x\)</span> an <span class="math notranslate nohighlight">\(n \times 1\)</span> vector:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial y}{\partial x}=n \times 1 \text { vector of palrtial derivatives with elements } \frac{\partial y}{\partial x_{i}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^{2} y}{\partial x \partial x^{\prime}}=n \times n \text { matrix of second order partial derivatives with elements } \frac{\partial^{2} y}{\partial x_{i} \partial x_{j}}
+\]</div>
+<p>If <span class="math notranslate nohighlight">\( y = f(x)\)</span> with <span class="math notranslate nohighlight">\(y\)</span> an <span class="math notranslate nohighlight">\(m x1\)</span> vector and <span class="math notranslate nohighlight">\(x\)</span> an <span class="math notranslate nohighlight">\(n \times 1\)</span> vector:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial y}{\partial x^{\prime}}=m \times n \text { matrix of partial derivatives with elements } \frac{\partial y_{i}}{\partial x_{j}}
+\]</div>
+<p>These allow us to right the following results:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+y=a^{\prime} x, &amp; \frac{\partial y}{\partial x}=a \\
+y=A x, &amp; \frac{\partial y}{\partial x^{\prime}}=A \text { or } \frac{\partial y^{\prime}}{\partial x}=A \\
+y=x^{\prime} A x, &amp; \frac{\partial y}{\partial x}=2 A x, \quad \frac{\partial^{2} y}{\partial x \partial x^{\prime}}=2 A
+\end{array}
+\end{split}\]</div>
+</div>
+<p>So, from the conventional</p>
 </div>
 
     <script type="text/x-thebe-config">
