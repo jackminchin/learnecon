@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex book.idx"] 1626942766 "book.idx" "book.ind" "book" 1626942769
+["makeindex book.idx"] 1626942766 "book.idx" "book.ind" "book" 1626943131
   "book.idx" 1626942768 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "book.ilg"
   "book.ind"
-["pdflatex"] 1626942767 "book.tex" "book.pdf" "book" 1626942769
+["pdflatex"] 1626942767 "book.tex" "book.pdf" "book" 1626943131
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -242,14 +242,14 @@
   "footnotehyper-sphinx.sty" 1597428826 8888 1bbd7bdeae8c8bed1d10d551bddb1cc9 ""
   "jupyterBook.cls" 1626812012 1222 69a0f15145f4060ebcfbf0527d3a613a ""
   "sphinx.sty" 1597428826 82155 76e1169ffc917b7b0448ff4c656bfb06 ""
-  "sphinxhighlight.sty" 1626942763 8137 38a433148fcb7611515a989ff1750dd5 ""
+  "sphinxhighlight.sty" 1626943131 8137 38a433148fcb7611515a989ff1750dd5 ""
   "sphinxmanual.cls" 1597428826 4236 124cd90deb92742b5d3922bfc2cd70c0 ""
-  "sphinxmessages.sty" 1626942763 745 3f5fcd6cdd7964ed608767954a8ced6f ""
+  "sphinxmessages.sty" 1626943131 745 3f5fcd6cdd7964ed608767954a8ced6f ""
   "sphinxmulticell.sty" 1597428826 14606 0b6edc2b1a83546ed92026d1f6a311b5 ""
   (generated)
-  "book.out"
-  "book.aux"
   "book.idx"
-  "book.log"
   "book.toc"
+  "book.log"
+  "book.out"
   "book.pdf"
+  "book.aux"
