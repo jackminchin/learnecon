@@ -7,6 +7,7 @@ parts:
   - caption: Macroeconomics
     chapters:
     - file: parts/macroeconomics/intro
+    - file: 'parts/macroeconomics/monetarytheory'
   - caption: Econometric Theory
     chapters:
     - file: parts/econometric-theory/introduction
