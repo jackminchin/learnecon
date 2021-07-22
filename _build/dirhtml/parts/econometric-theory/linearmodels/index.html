@@ -198,6 +198,62 @@
   <a class="reference internal nav-link" href="#ordinary-least-squares-estimation">
    Ordinary Least Squares Estimation
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-ols-hat-beta-estimator">
+     Properties of the OLS (
+     <span class="math notranslate nohighlight">
+      \(\hat\beta\)
+     </span>
+     ) estimator
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#expectation-of-hat-beta">
+       Expectation of
+       <span class="math notranslate nohighlight">
+        \(\hat\beta\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variance-of-hat-beta">
+       Variance of
+       <span class="math notranslate nohighlight">
+        \(\hat\beta\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#orthogonality-properties">
+       Orthogonality Properties
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#takeaway">
+         Takeaway
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goodness-of-fit">
+     Goodness-of-Fit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gauss-markov-theorem">
+   The Gauss-Markov Theorem
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-likelihood-estimation">
+   Maximum Likelihood Estimation
+  </a>
  </li>
 </ul>
 
@@ -335,14 +391,323 @@ y=x^{\prime} A x, &amp; \frac{\partial y}{\partial x}=2 A x, \quad \frac{\partia
 \[
 X^{\prime} X \hat{\beta}=X^{\prime} y
 \]</div>
-<p>and, solving for <span class="math notranslate nohighlight">\(\hat \beta\)</span> we can derive the OLS estimator:$<span class="math notranslate nohighlight">\(
+<p>and, solving for <span class="math notranslate nohighlight">\(\hat \beta\)</span> we can derive the OLS estimator:</p>
+<div class="math notranslate nohighlight">
+\[
 \hat{\beta}=\left(X^{\prime} X\right)^{-1} X^{\prime} y
-\)</span>$</p>
+\]</div>
 <p>Now, here’s where some of the assumptions come in, <span class="math notranslate nohighlight">\((X'X)^{-1}\)</span> must exist given the assumptoin that <span class="math notranslate nohighlight">\(X\)</span> has full column rank <span class="math notranslate nohighlight">\(k\)</span>.  Also, note that the second order conditions are satisfied:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial^{2} R S S}{\partial \hat{\beta} \partial \hat{\beta}^{\prime}}=2 X^{\prime} X&gt;0 \text { (i.e. is a positive definite matrix) }
 \]</div>
+<div class="section" id="properties-of-the-ols-hat-beta-estimator">
+<h2>Properties of the OLS (<span class="math notranslate nohighlight">\(\hat\beta\)</span>) estimator<a class="headerlink" href="#properties-of-the-ols-hat-beta-estimator" title="Permalink to this headline">¶</a></h2>
+<p>There are a number of properties associated with the OLS estimator.
+First, a useful expression relating <span class="math notranslate nohighlight">\(\hat\beta\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> can be
+derived.</p>
+<p>The fundamental point of econometrics is that <em>y</em> is random. We assume
+that the only source of randomness in the model is the error term
+<span class="math notranslate nohighlight">\(\epsilon \; or \; u\)</span>. Anything that we construct from our data must be
+a random variable.</p>
+<div class="math notranslate nohighlight">
+\[\beta  = \hat\beta + \underbrace{(X'X)^{-1}}_{\text{Constant}} X'u\]</div>
+<p>This is found by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+        \hat\beta &amp;= (X'X)^{-1}X'y \\ 
+        &amp;=   (X'X)^{-1}X' (X\beta + u)  \\ 
+        &amp;=   (X'X)^{-1}X'X\beta + (X'X)^{-1}X'u \\
+        &amp;= \beta + \underbrace{(X'X)^{-1}}_{\text{Constant}} X'u 
+    \end{aligned}\end{split}\]</div>
+<p>It might be useful to know that <span class="math notranslate nohighlight">\((X'X)^{-1}(X'X) = I\)</span>, (i.e the identity
+matrix). <span class="math notranslate nohighlight">\((X'X)^{-1}(X'X) \beta = \beta\)</span>. The identity matrix times
+<span class="math notranslate nohighlight">\(\beta\)</span> is just <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="section" id="expectation-of-hat-beta">
+<h3>Expectation of <span class="math notranslate nohighlight">\(\hat\beta\)</span><a class="headerlink" href="#expectation-of-hat-beta" title="Permalink to this headline">¶</a></h3>
+<p>The expectation of <span class="math notranslate nohighlight">\(\hat\beta\)</span>, which can be denoted as <span class="math notranslate nohighlight">\(E[\hat\beta]\)</span>, can be written from the above term :</p>
+<div class="math notranslate nohighlight">
+\[ E[\hat\beta] =  \bigg [\beta+\left(X^{\prime} X\right)^{-1} X^{\prime} u \bigg]\]</div>
+<p>Now, because <span class="math notranslate nohighlight">\(\beta\)</span> is a constant, it can be bought out of the expectations operator which gives:</p>
+<div class="math notranslate nohighlight">
+\[  E[\hat\beta] = \beta+ E \bigg [\left(X^{\prime} X\right)^{-1} X^{\prime} u \bigg]\]</div>
+<p>similarly, with <span class="math notranslate nohighlight">\(\left(X^{\prime} X\right)^{-1} X^{\prime}\)</span> being constant, the expectation is itself, meaning we can bring these terms out of the expectations operator, leaving just the error term:</p>
+<div class="math notranslate nohighlight">
+\[  E[\hat\beta] =\beta+ \left(X^{\prime} X\right)^{-1} X^{\prime} E [u]\]</div>
+<p>From the classical assumptions, we know that the expectation of the error term is 0. Substituting this in, we can see that the expectation of <span class="math notranslate nohighlight">\(\hat\beta\)</span> is always <span class="math notranslate nohighlight">\(\beta\)</span>, the outcome of <span class="math notranslate nohighlight">\(\hat\beta\)</span> won’t be
+<span class="math notranslate nohighlight">\(\beta\)</span>, however the average outcome will equal beta.:</p>
+<div class="math notranslate nohighlight">
+\[E[\hat\beta] = \beta\]</div>
+<p>** This is what it means to say that <span class="math notranslate nohighlight">\(\hat\beta\)</span> is an unbiased estimator of <span class="math notranslate nohighlight">\(\beta\)</span> **</p>
+</div>
+<div class="section" id="variance-of-hat-beta">
+<h3>Variance of <span class="math notranslate nohighlight">\(\hat\beta\)</span><a class="headerlink" href="#variance-of-hat-beta" title="Permalink to this headline">¶</a></h3>
+<p>The variance of a vector <span class="math notranslate nohighlight">\(v\)</span> is equal to <span class="math notranslate nohighlight">\((E[v] - E[\bar v])(v - \bar v)'\)</span> (that is, the expected value of vector minus the mean
+of the vector times the vector minus the mean of the vector transpose).
+Because in the case of the <span class="math notranslate nohighlight">\(\hat\beta\)</span>, the expected value is <span class="math notranslate nohighlight">\(\beta\)</span>
+itself, the variance of <span class="math notranslate nohighlight">\(\hat\beta\)</span> is simply:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V(\hat{\beta}) &amp;=E\left[(\hat{\beta}-\beta)(\hat{\beta}-\beta)^{\prime}\right] \\
+&amp;=E\left[\left(X^{\prime} X\right)^{-1} X^{\prime} u\left(\left(X^{\prime} X\right)^{-1} X^{\prime} u\right)^{\prime}\right] \\
+&amp;=E\left[\left(X^{\prime} X\right)^{-1} X^{\prime} u u^{\prime} X\left(X^{\prime} X\right)^{-1}\right]=\left(X^{\prime} X\right)^{-1} X^{\prime} E\left[u u^{\prime}\right] X\left(X^{\prime} X\right)^{-1} \\
+&amp;=\left(X^{\prime} X\right)^{-1} X^{\prime}\left(\sigma^{2} I_{T}\right) X\left(X^{\prime} X\right)^{-1}=\sigma^{2}\left(X^{\prime} X\right)^{-1} X^{\prime} X\left(X^{\prime} X\right)^{-1} \\
+&amp;=\sigma^{2}\left(X^{\prime} X\right)^{-1}
+\end{aligned}
+\end{split}\]</div>
+<p>We have the random quantity in the middle, the error terms <span class="math notranslate nohighlight">\(uu'\)</span>,
+everything to the left and right are constant quantities. In the final
+equation, we see that we are multiplying by the identity matrix, which
+just leaves the original matrix giving the variance to equal
+<span class="math notranslate nohighlight">\(\sigma^2(X'X)^{-1}\)</span>.</p>
+<p>However, we can see that in order to know the variance, we must estimate <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+<p>### Estimating <span class="math notranslate nohighlight">\(\sigma^2\)</span></p>
+<p>We can estimate <span class="math notranslate nohighlight">\(\sigma^2\)</span> based on the residual sum of squares <span class="math notranslate nohighlight">\(RSS = \hat u'\hat u\)</span>. Firstly, using the definition of the linear model in matrix form we can write:</p>
+<div class="math notranslate nohighlight">
+\[\hat u = y - X\hat\beta\]</div>
+<p>Rearranging yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{u} &amp;=y-X \hat{\beta}=X \beta+u-X \hat{\beta} \\
+&amp;=X \beta+u-X\left(\beta+\left(X^{\prime} X\right)^{-1} X^{\prime} u\right) \\
+&amp;=u-X\left(X^{\prime} X\right)^{-1} X^{\prime} u \\
+&amp;=\left(I_{T}-X\left(X^{\prime} X\right)^{-1} X^{\prime}\right) u=M u
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(M\)</span> is defined as <span class="math notranslate nohighlight">\(M = I_T - X(X'X)^{-1} X'\)</span>. We can show that this new matrix, <span class="math notranslate nohighlight">\(M\)</span>, is symmetric, we can also show that is satisfies <span class="math notranslate nohighlight">\(MM  = M\)</span>, making <span class="math notranslate nohighlight">\(M\)</span> what is known as <em>idempotent</em>. This
+means that the RSS (<span class="math notranslate nohighlight">\(\hat u ' \hat u\)</span>) can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \hat u ' \hat u &amp;= (Mu)'Mu = u'MMu = u'Mu \\
+    &amp;= Tr(u'Mu) = Tr(Muu')\end{aligned}\end{split}\]</div>
+<p>Because it is a scalar a 1 by 1 matrix, the trace of the matrix is the
+same. We know that the trace of a product of two matrices is the same as
+the trace of product of 2 matrices.</p>
+<p>Next,</p>
+<div class="math notranslate nohighlight">
+\[E[Tr(Muu')] = Tr(ME[uu']) = Tr(M\sigma^2I_T) = \sigma^2Tr(M)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[Tr(M) = T - k\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(E(\hat u ' \hat u) = \sigma^2(T-k)\)</span> and it follows that:</p>
+<div class="math notranslate nohighlight">
+\[E( \frac{\hat u '\hat u} {T -k }) = \sigma^2\]</div>
+<p>Such that an unbiased estimator of sigma squared is provided by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\hat u '\hat u} {T -k } = \sigma^2\]</div>
+<p>We can therefore construct an unbiased estimator of <span class="math notranslate nohighlight">\(V(\hat \beta)\)</span>
+using:</p>
+<div class="math notranslate nohighlight">
+\[\hat V( \hat \beta) = \hat\sigma^2(X'X)^{-1}\]</div>
+</div>
+<div class="section" id="orthogonality-properties">
+<h3>Orthogonality Properties<a class="headerlink" href="#orthogonality-properties" title="Permalink to this headline">¶</a></h3>
+<p>Two orthogonality results also follow from OLS estimation:</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{X'}_{K \times T} \underbrace{\hat u}_{T \times 1} = X'Mu = 0\]</div>
+<p>since</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    X'M &amp;= X'\underbrace{(I_T - X(X'X)^{-1}X')}_{M} \\
+    &amp;= \underbrace{X'}_{X'I_T} - X'X (X'X)^{-1} X' \\
+    &amp;=  X' - {X'X} {(X'X)^{-1}} \; X' \\
+    &amp;= X' - X' = 0
+\end{aligned}\end{split}\]</div>
+<p>i.e the regression are orthogonal to the residuals. given that the first
+column of X is a constant, the orthogonality results <span class="math notranslate nohighlight">\(X'\hat u' = 0\)</span>
+implies:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{t=1}^T \hat u_t = 0\]</div>
+<p>so the residuals sum to zero when a constant term is present in the
+regression.</p>
+<p>Also,</p>
+<div class="math notranslate nohighlight">
+\[\hat y' \hat u = (X \hat\beta)'\hat u = \hat\beta'X'Mu = 0\]</div>
+<p>This is the inner product of the predicted values, where the predicted
+values are derived from as being the difference of the actual values and
+residuals.</p>
+<div class="section" id="takeaway">
+<h4>Takeaway<a class="headerlink" href="#takeaway" title="Permalink to this headline">¶</a></h4>
+<p>The sum of the residuals in OLS is always 0, and the sum of the product
+of predicted values times the residuals is also 0.</p>
+</div>
+</div>
+</div>
+<div class="section" id="goodness-of-fit">
+<h2>Goodness-of-Fit<a class="headerlink" href="#goodness-of-fit" title="Permalink to this headline">¶</a></h2>
+<p>Assuming there is a constant in the regression model, we can measure how
+well the sample regression fits the data, by assessing how much of the
+variation of the dependent variable about its mean is explained by the
+regression. The total variation of <span class="math notranslate nohighlight">\(y_t\)</span> about its mean is defined as
+the total sum of squares:</p>
+<div class="math notranslate nohighlight">
+\[TSS = \sum_{t=1}^T (\hat y_t - \bar{\hat y_t})^2\]</div>
+<p>This quantity can be decomposed into the part explained by the
+regression, i.e the variation of the fitted values about their mean (the
+explained sum of squares, ESS), and the part not explained by the
+regression (i.e the variation of the residuals [RSS]).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+      TSS &amp;=  \sum_{t=1}^T (\hat y_t - \bar{\hat{y_t}})^2 \\ 
+      &amp;= \sum_{t=1}^T [(\hat y_t - \bar{\hat{y_t}}) + \hat u_t]^2 \\
+      &amp;= \underbrace{\sum_{t=1}^T (\hat y_t - \bar{\hat{y_t}})}_{ESS} + \underbrace{\sum_{t=1}^T \hat u_t^2}_{RSS} + 2\sum_{t=1}^T (\hat y_t - \bar y) \hat u_t
+\end{aligned}\end{split}\]</div>
+<p>This can be written simply below, because the final term in the above
+equation sums to 0 because of the orthogonality results above.</p>
+<div class="math notranslate nohighlight">
+\[TSS = ESS + RSS\]</div>
+<p>All of these quantities are sums of squares, which cannot be negative.
+The measure of how well a regression model does is constructed
+considering the proportion of the variation in the dependant variable we
+can explain to the total amount of variation.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    R^2 &amp;= \frac{ESS}{TSS} = 1- \frac{RSS}{TSS} \\
+    &amp;= \frac{ \hat y' \hat y - T \bar y ^2 } {y' y - T \bar y ^2} \\
+    &amp;= 1 - \frac{\hat u' \hat u} {y'y - T \bar y ^2}
+\end{aligned}\end{split}\]</div>
+<p>If we add another explanatory variable variable to a model, then the
+worst outcome that the new variable could add to the model is 0. In
+other words, you can not reduce the quality of the model by adding
+another explanatory variable. Adding a new variable, then, will always
+increase <span class="math notranslate nohighlight">\(R^2\)</span>. To overcome this we use the adjusted <span class="math notranslate nohighlight">\(R^2\)</span> measure,
+<span class="math notranslate nohighlight">\(\bar R^2\)</span>, which incorporates a penalty for including additional
+variables:</p>
+<div class="math notranslate nohighlight">
+\[\bar R^2 = 1 - \left[\left(\frac{T - 1}{T - k}\right) (1 - R^2)\right]\]</div>
+<p>This measure only increases if its contribution outweighs the penalty
+for its inclusion. note that for <span class="math notranslate nohighlight">\(k &gt; 1,\bar R^2 &lt; R^2\)</span>, and <span class="math notranslate nohighlight">\(R^2\)</span> can
+be negative.</p>
+</div>
+</div>
+<div class="section" id="the-gauss-markov-theorem">
+<h1>The Gauss-Markov Theorem<a class="headerlink" href="#the-gauss-markov-theorem" title="Permalink to this headline">¶</a></h1>
+<p>This theorem shows that among the class of estimators that linear
+functions of <span class="math notranslate nohighlight">\(y_t\)</span> and are also unbiased estimators, the OLS estimator
+<span class="math notranslate nohighlight">\(\hat\beta\)</span> has the smallest variance. We say that <span class="math notranslate nohighlight">\(\hat \beta\)</span> is BLUE
+(Best Linear Unbiased Estimator).</p>
+<p>Let <span class="math notranslate nohighlight">\(\tilde \beta = Cy\)</span> be an arbitrary estimator that is linear in <span class="math notranslate nohighlight">\(y\)</span>
+(where <span class="math notranslate nohighlight">\(\underbrace{C}_{K \times T \; matrix}\)</span> is non-stochastic).</p>
+<p><em>In the case of OLS, C is defined as</em></p>
+<div class="math notranslate nohighlight">
+\[\hat \beta = [\underbrace{(X'X)^{-1} X}_{K \times K \;\bullet \; K \times T} ]y\]</div>
+<p>In the first line we can take C outside of the Expected values function
+because it is a constant, leaving <span class="math notranslate nohighlight">\(E(y)\)</span> where <span class="math notranslate nohighlight">\(y\)</span> is a linear model. We
+substitute this model in to get <span class="math notranslate nohighlight">\(CE(X\beta + u)\)</span>. WE can then take the
+constant <span class="math notranslate nohighlight">\(X\)</span> out, leaving <span class="math notranslate nohighlight">\(CE(u)\)</span>. From the fundamental assumptions of
+the linear regression model <span class="math notranslate nohighlight">\(E(u)\)</span> is 0, leaving simply <span class="math notranslate nohighlight">\(CX\beta\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    E(\tilde \beta) &amp;= E(Cy) = CE(y) = CE(X \beta + u) \\
+    &amp;= CX\beta + CE(u) \\
+    &amp;= CX\beta      
+  \end{aligned}\end{split}\]</div>
+<p>Therefore, we require the restriction <span class="math notranslate nohighlight">\(CX = I\)</span> to hold in order that
+<span class="math notranslate nohighlight">\(\hat\beta\)</span> is an unbiased estimator.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \tilde \beta &amp;= Cy = C(X\beta + u)\\ &amp;= CX \beta + Cu \\&amp; = \beta + Cu  
+\end{aligned}\end{split}\]</div>
+<p>Now, because <span class="math notranslate nohighlight">\(\tilde\beta\)</span> is unbiased, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+      V(\tilde\beta) &amp;= E[(\tilde\beta - \beta) (\tilde\beta - \beta)'] \\&amp;= E[Cu(Cu)'] = E[Cuu'C'] \\ &amp;= C\underbrace{E[uu']}_{\sigma^2 I_T}C' \\ &amp;= \sigma^2CC'
+\end{aligned}\end{split}\]</div>
+<p>The idea is to compare <span class="math notranslate nohighlight">\(\sigma^2CC'\)</span> with <span class="math notranslate nohighlight">\(\sigma^2(X'X)^{-1}\)</span>.</p>
+<p>First add a zero to the simplest of all possible equations</p>
+<div class="math notranslate nohighlight">
+\[C = C + 0\]</div>
+<p>We make this zero by inserting in two like terms that cancel each other
+out, in this case <span class="math notranslate nohighlight">\(-(X'X)^{-1}X' + (X'X)^{-1}X'\)</span> to give:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+          C &amp;= C -(X'X)^{-1}X' + (X'X)^{-1}X' \\
+          &amp;= A + (X'X)^{-1}X',
+    \end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A = c - (X'X)^{-1}X'\)</span>, and notice that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+            AX &amp;= CX - (X'X)^{-1}X'X \\
+            &amp;= CX - \underbrace{{(X'X)^{-1}}{X'X}}_{I_K} \\
+            &amp;= \underbrace{CX}_{I_K} - I\\
+            &amp;= I - I = 0
+        \end{aligned}\end{split}\]</div>
+<p>Because we are only considering estimators which are unbiased,
+<span class="math notranslate nohighlight">\(\tilde \beta\)</span> will only be an unbiased estimator if <span class="math notranslate nohighlight">\(CX\)</span> is also equal
+to the identity matrix <span class="math notranslate nohighlight">\(I_K\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(AX = 0\)</span>, then <span class="math notranslate nohighlight">\((AX)' = 0\)</span> so <span class="math notranslate nohighlight">\(AX = (AX)'\)</span>, then,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+        V(\tilde\beta) = \sigma^2CC' &amp;= \sigma^2(A + (X'X)^{-1}X')(A + (X'X)^{-1}X')' \\
+        &amp;= \sigma^2(A + (X'X)^{-1}X')(A '+ X(X'X)^{-1}X')\\
+        &amp;= \sigma^2(AA' + (X'X)^{-1}X'A' + AX(X'X)^{-1} + (X'X)^{-1}X'X(X'X)^{-1}) \\
+        &amp;= \sigma^2(AA' + {(X'X)^{-1}}\underbrace{X'A'}_0 + \underbrace{AX}_{0}{(X'X)^{-1}} + (X'X)^{-1} \underbrace{{X'X}{(X'X)^{-1}}}_{I_K}) \\
+        &amp;= \sigma^2(AA') + \sigma(X'X)^{-1} 
+    \end{aligned}\end{split}\]</div>
+<p>So <span class="math notranslate nohighlight">\(V(\tilde\beta)\)</span> exceeds <span class="math notranslate nohighlight">\(V(\hat\beta)\)</span> by a positive definite
+matrix. (Note that <span class="math notranslate nohighlight">\(\sigma^2AA' = 0\)</span> if an only if A = 0 in which case
+<span class="math notranslate nohighlight">\(\tilde\beta = \hat\beta\)</span>.</p>
+<p>The intuition for this is that, if <span class="math notranslate nohighlight">\(A = 0\)</span> then
+<span class="math notranslate nohighlight">\(C = 0  + (X'X)^{-1}X')\)</span>, so <span class="math notranslate nohighlight">\(\tilde\beta = \hat\beta\)</span>.</p>
+</div>
+<div class="section" id="maximum-likelihood-estimation">
+<h1>Maximum Likelihood Estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h1>
+<p>MLE is an alternative method for estimating the multivariate linear
+regression model. It is another way to estimate the unknown parameters
+of a linear regression model. MLE can be quite complex.</p>
+<p>The idea is that the process attempts to match the given observations to
+some probability function. MLE chooses the estimator to be that value
+which is most likely to have given rise to the observed sample.</p>
+<p>More rigorously if <span class="math notranslate nohighlight">\(y_1, y_2, ..., y_T\)</span> represents a random sample of
+<span class="math notranslate nohighlight">\(T\)</span> observations on a random variable <span class="math notranslate nohighlight">\(Y\)</span> with PDF <span class="math notranslate nohighlight">\(f(u;\theta)\)</span> where
+<span class="math notranslate nohighlight">\(\theta\)</span> represents a vector of unknown population parameters. Then, the
+joint density, or likelihood function, of the <span class="math notranslate nohighlight">\(y_t\)</span>, since they are
+independent is:</p>
+<div class="math notranslate nohighlight">
+\[L(y_1, y_2, ..., y_T; \theta) = f(y_1; \theta)f(y_2;\theta) ...f(y_T;\theta) = \prod_{t=1}^T f(y_t; \theta)\]</div>
+<p>and the MLE chooses an estimator <span class="math notranslate nohighlight">\(\hat\theta\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\hat\theta = \arg_\theta \max L(y_1, y_2, ... , y_T; \theta)\]</div>
+<p>To make MLE operational, we must specify a functional form for <span class="math notranslate nohighlight">\(f(.)\)</span>.</p>
+<p>In the context of multivariate linear regression with normal errors, we
+have:</p>
+<div class="math notranslate nohighlight">
+\[y = X\beta + u, \;\;\;\; u \sim  N(0, \sigma^2I_T)\]</div>
+<div class="math notranslate nohighlight">
+\[y \sim  N(X\beta, \sigma^2I_T)\]</div>
+<p>i.e we add the assumption that the errors are normally distributed.</p>
+<p>Using multivariate normal distribution results we can then write:</p>
+<div class="math notranslate nohighlight">
+\[L(y; \beta, \sigma^2) = (2\pi\sigma^2)^{-T/2} \exp\{- \frac{1}{2\sigma^2}(y - X\beta)'(y - X\beta)) \}\]</div>
+<p>This can be found in the part 0 notes on statistics. Normally, you would
+just begin the normal maximisation process and solve for FOCs set to 0,
+however, this is difficult because the function contains an exponent. If
+we take the log (which is a monotone function [if the target function
+is increasing the log will increase and vice versa]).</p>
+<p>Maximising the likelihood L with respect to <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> yields
+the same estimates as maximising the log-likelihood:</p>
+<div class="math notranslate nohighlight">
+\[\ln L = - \frac{T} {2} \ln(2\pi) - \frac{T} {2} \ln(\sigma^2) - \frac{1}{2\sigma^2}(y - X\beta)'(y-X\beta)\]</div>
+<p>Maximising <span class="math notranslate nohighlight">\(\ln L\)</span> gives the first order conditions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp;\frac{\partial \ln L} {\partial \beta } = \frac{1}{\sigma^2}(X'y - X'X\beta) =0 \\
+  &amp;\frac{\partial \ln L} {\partial \sigma^2} = - \frac{T} {2\sigma^2} + \frac{1}{2\sigma^4}(y - X\beta)'(y-X\beta) = 0
+ \end{aligned}\end{split}\]</div>
+<p>Solving gives the MLEs:</p>
+<div class="math notranslate nohighlight">
+\[\tilde\beta = (X'X)^{-1}X'y\]</div>
+<div class="math notranslate nohighlight">
+\[\tilde\sigma^2 = \frac{\tilde u' \tilde u}{T},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde u = y -X\tilde\beta\)</span>. Note that the MLE of <span class="math notranslate nohighlight">\(\beta\)</span> is
+identical to the OLS estimate of <span class="math notranslate nohighlight">\(\beta\)</span>, and the MLE of <span class="math notranslate nohighlight">\(\sigma^2\)</span> is
+biased in finite samples.</p>
+<div class="math notranslate nohighlight">
+\[\tilde\beta = \hat\beta\]</div>
+<div class="math notranslate nohighlight">
+\[\tilde\sigma^2 = \left( \frac{T - k}{T} \right) \hat\sigma^2\]</div>
 </div>
 
     <script type="text/x-thebe-config">

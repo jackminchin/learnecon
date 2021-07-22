@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex book.idx"] 1626942766 "book.idx" "book.ind" "book" 1626943131
+["makeindex book.idx"] 1626942766 "book.idx" "book.ind" "book" 1626971026
   "book.idx" 1626942768 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
-  "book.ilg"
   "book.ind"
-["pdflatex"] 1626942767 "book.tex" "book.pdf" "book" 1626943131
+  "book.ilg"
+["pdflatex"] 1626971026 "book.tex" "book.pdf" "book" 1626971026
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -14,6 +14,8 @@
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1229303445 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -237,19 +239,19 @@
   "book.aux" 1626942769 2685 4cd2197ec7f9b4bbecbbbdae0781fe95 "pdflatex"
   "book.ind" 1626942766 0 d41d8cd98f00b204e9800998ecf8427e "makeindex book.idx"
   "book.out" 1626942769 409 dc888bcf40bb0d5317905874c7af37b1 "pdflatex"
-  "book.tex" 1626942763 10705 66d61d523aada89d3886e8a3917eb15a ""
+  "book.tex" 1626971026 24702 6b4c4a91137aaca5c30527de88060091 ""
   "book.toc" 1626942769 490 20d126542b73fbd988ff9c8aba0a7258 "pdflatex"
   "footnotehyper-sphinx.sty" 1597428826 8888 1bbd7bdeae8c8bed1d10d551bddb1cc9 ""
   "jupyterBook.cls" 1626812012 1222 69a0f15145f4060ebcfbf0527d3a613a ""
   "sphinx.sty" 1597428826 82155 76e1169ffc917b7b0448ff4c656bfb06 ""
-  "sphinxhighlight.sty" 1626943131 8137 38a433148fcb7611515a989ff1750dd5 ""
+  "sphinxhighlight.sty" 1626971026 8137 38a433148fcb7611515a989ff1750dd5 ""
   "sphinxmanual.cls" 1597428826 4236 124cd90deb92742b5d3922bfc2cd70c0 ""
-  "sphinxmessages.sty" 1626943131 745 3f5fcd6cdd7964ed608767954a8ced6f ""
+  "sphinxmessages.sty" 1626971026 745 3f5fcd6cdd7964ed608767954a8ced6f ""
   "sphinxmulticell.sty" 1597428826 14606 0b6edc2b1a83546ed92026d1f6a311b5 ""
   (generated)
-  "book.idx"
   "book.toc"
-  "book.log"
   "book.out"
+  "book.idx"
+  "book.log"
   "book.pdf"
   "book.aux"
