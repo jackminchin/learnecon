@@ -10,7 +10,7 @@ import os
 
 class Handler(FileSystemEventHandler):
     def on_any_event(self, event):
-        os.system('jupyter-book build . --builder dirhtml')
+        os.system('jupyter-book build . --all --builder dirhtml')
         os.system('./utils/setIndex.py')
         
         return super().on_any_event(event)

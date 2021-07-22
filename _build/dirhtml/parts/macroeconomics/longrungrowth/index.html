@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction To Econometric Theory &#8212; Learn Economics</title>
+    <title>Long Run Growth Theories &#8212; Learn Economics</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,11 +52,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://learnecon.jackminchin.me/parts/econometric-theory/introduction.html" />
+    <link rel="canonical" href="https://learnecon.jackminchin.me/parts/macroeconomics/longrungrowth.html" />
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="The Linear Regression Model" href="../linearmodels/" />
-    <link rel="prev" title="Monetary Theory" href="../../macroeconomics/monetarytheory/" />
+    <link rel="next" title="Monetary Theory" href="../monetarytheory/" />
+    <link rel="prev" title="Introduction" href="../intro/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,19 +96,19 @@
   Macroeconomics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../macroeconomics/intro/">
+  <a class="reference internal" href="../intro/">
    Introduction
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../macroeconomics/longrungrowth/">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Long Run Growth Theories
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../macroeconomics/monetarytheory/">
+  <a class="reference internal" href="../monetarytheory/">
    Monetary Theory
   </a>
  </li>
@@ -118,14 +118,14 @@
   Econometric Theory
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../econometric-theory/introduction/">
    Introduction To Econometric Theory
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../linearmodels/">
+  <a class="reference internal" href="../../econometric-theory/linearmodels/">
    The Linear Regression Model
   </a>
  </li>
@@ -170,7 +170,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/parts/econometric-theory/introduction.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/parts/macroeconomics/longrungrowth.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -195,6 +195,48 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Long Run Growth Theories
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#introducing-gdp">
+       Introducing GDP
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#economic-growth">
+       Economic Growth
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-kaldor-facts">
+       The Kaldor Facts
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -203,8 +245,55 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-econometric-theory">
-<h1>Introduction To Econometric Theory<a class="headerlink" href="#introduction-to-econometric-theory" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="long-run-growth-theories">
+<h1>Long Run Growth Theories<a class="headerlink" href="#long-run-growth-theories" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>There is much interest in the drivers and the determinants of long-run economic development. Theories of proposed, which are simplifications of the real world, and to validate these theories, economists create measurements that relate models to the real world.</p>
+<p>To make measurements, one requires units of measurement that are stable over time. For economics, money seems like a sensible choice for this unit, facilitating aggregation and allows for compatibility. Unfortunately, money is not a stable unit of account over time. This is due to <strong>inflation</strong> and the <strong>different currencies</strong> that countries use.</p>
+<div class="section" id="introducing-gdp">
+<h3>Introducing GDP<a class="headerlink" href="#introducing-gdp" title="Permalink to this headline">¶</a></h3>
+<p>GDP measures the total goods and services produced in country over a particular time period, usually a year. Intermediate production is excluded, to avoid double counting. It measures the welfare of the average person in this country, derived from consumption of goods an services plus future consumption utility current investment goods will
+eventually generate in the future - it is important to remember that it omits everything else.</p>
+<p>The fundamental accounting identity which governs GDP can be written:</p>
+<div class="math notranslate nohighlight">
+\[ Y_t = C_t + I_t + G_t + \underbrace{(X_t - M_t)}_{\text{Net Exports}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y_t\)</span> is GDP, <span class="math notranslate nohighlight">\(C_t\)</span> is private consumption, this includes durable and non-durable goods and services, <span class="math notranslate nohighlight">\(I_t\)</span> is private investment which includes structures, machinery &amp; equipment, and software which is bought or produced by firms. <span class="math notranslate nohighlight">\(G_t\)</span> is government expenditures and <span class="math notranslate nohighlight">\((X_t - M_t)\)</span> are net exports, that is, exports (<span class="math notranslate nohighlight">\(X_t\)</span>) minus imports (<span class="math notranslate nohighlight">\(M_t\)</span>).</p>
+</div>
+<div class="section" id="economic-growth">
+<h3>Economic Growth<a class="headerlink" href="#economic-growth" title="Permalink to this headline">¶</a></h3>
+<p>Economic growth is the increase in real GDP, however we measure GDP in nominal terms, which includes inflation. In order to calculate real GDP, a price index - or deflator - is used for each item. The growth rate for an item can be written:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\Delta x}{x} = \frac{\Delta X}{X} - \frac{\Delta p}{p} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\frac{\Delta x}{x}\)</span> is the real growth rate, <span class="math notranslate nohighlight">\(\frac{\Delta X}{X}\)</span> is nominal growth and \frac{\Delta p}{p} is the item’s inflation.</p>
+<p>The growth of GDP is an average of these growth rates, weighted by their relative shares in GDP. In practice, the process involves measuring chained quantity indexes <span id="id1">[<a class="reference internal" href="#id4">ONS, 2021</a>]</span>.</p>
+</div>
+<div class="section" id="the-kaldor-facts">
+<h3>The Kaldor Facts<a class="headerlink" href="#the-kaldor-facts" title="Permalink to this headline">¶</a></h3>
+<p>In 1957, Nicholas Kaldor summarized the main properties of long run growth <span id="id2">[<a class="reference internal" href="#id5">Kaldor, 1961</a>]</span>:</p>
+<ol class="simple">
+<li><p>GDP grows at a roughly constant rate.</p></li>
+<li><p>The capital to GDP rate is roughly constant.</p></li>
+<li><p>Capital and labour shares are roughly constant across time.</p></li>
+<li><p>The rate of return on investment is roughly constant.</p></li>
+<li><p>The real wages grows at a roughly constant rate</p></li>
+</ol>
+<p>For any theory of long run economic growth to be plausible, they must adhere to these stylized facts.</p>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<!-- ## The Neoclassical Growth Model -->
+<p id="id3"><dl class="citation">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">Kal61</a></span></dt>
+<dd><p>Nicholas Kaldor. <em>Capital Accumulation and Economic Growth</em>, pages 177–222. Palgrave Macmillan UK, London, 1961. URL: <a class="reference external" href="https://doi.org/10.1007/978-1-349-08452-4{\_}10">https://doi.org/10.1007/978-1-349-08452-4{\_}10</a>, <a class="reference external" href="https://doi.org/10.1007/978-1-349-08452-4_10">doi:10.1007/978-1-349-08452-4_10</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">ONS21</a></span></dt>
+<dd><p>ONS. Gross domestic product (GDP) QMI. 2021. URL: <a class="reference external" href="https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi">https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -220,7 +309,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./parts/econometric-theory"
+            path: "./parts/macroeconomics"
         },
         predefinedOutput: true
     }
@@ -232,8 +321,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../macroeconomics/monetarytheory/" title="previous page">Monetary Theory</a>
-    <a class='right-next' id="next-link" href="../linearmodels/" title="next page">The Linear Regression Model</a>
+    <a class='left-prev' id="prev-link" href="../intro/" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="../monetarytheory/" title="next page">Monetary Theory</a>
 
         </div>
         
