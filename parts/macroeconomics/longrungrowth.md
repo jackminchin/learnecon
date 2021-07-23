@@ -273,6 +273,7 @@ We can, then, define an equilibrium path for the Neoclassical economy for $\{c_t
 # References
 <!-- ## The Neoclassical Growth Model -->
 ```{bibliography} ../../zreferences.bib
+:filter: docname in docnames
 ```
 
 
