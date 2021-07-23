@@ -227,6 +227,35 @@
      </li>
     </ul>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neoclassical-growth-model">
+     Neoclassical Growth Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Introduction
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#description-of-the-economy">
+       Description of the economy
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#production-technology">
+         Production Technology
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#household-preferences">
+         Household Preferences
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -266,11 +295,11 @@ eventually generate in the future - it is important to remember that it omits ev
 <div class="math notranslate nohighlight">
 \[ \frac{\Delta x}{x} = \frac{\Delta X}{X} - \frac{\Delta p}{p} \]</div>
 <p>where <span class="math notranslate nohighlight">\(\frac{\Delta x}{x}\)</span> is the real growth rate, <span class="math notranslate nohighlight">\(\frac{\Delta X}{X}\)</span> is nominal growth and \frac{\Delta p}{p} is the item’s inflation.</p>
-<p>The growth of GDP is an average of these growth rates, weighted by their relative shares in GDP. In practice, the process involves measuring chained quantity indexes <span id="id1">[<a class="reference internal" href="#id4">ONS, 2021</a>]</span>.</p>
+<p>The growth of GDP is an average of these growth rates, weighted by their relative shares in GDP. In practice, the process involves measuring chained quantity indexes <span id="id1">[<a class="reference internal" href="#id5">ONS, 2021</a>]</span>.</p>
 </div>
 <div class="section" id="the-kaldor-facts">
 <h3>The Kaldor Facts<a class="headerlink" href="#the-kaldor-facts" title="Permalink to this headline">¶</a></h3>
-<p>In 1957, Nicholas Kaldor summarized the main properties of long run growth <span id="id2">[<a class="reference internal" href="#id5">Kaldor, 1961</a>]</span>:</p>
+<p>In 1957, Nicholas Kaldor summarized the main properties of long run growth <span id="id2">[<a class="reference internal" href="#id6">Kaldor, 1961</a>]</span>:</p>
 <ol class="simple">
 <li><p>GDP grows at a roughly constant rate.</p></li>
 <li><p>The capital to GDP rate is roughly constant.</p></li>
@@ -281,15 +310,76 @@ eventually generate in the future - it is important to remember that it omits ev
 <p>For any theory of long run economic growth to be plausible, they must adhere to these stylized facts.</p>
 </div>
 </div>
+<div class="section" id="neoclassical-growth-model">
+<h2>Neoclassical Growth Model<a class="headerlink" href="#neoclassical-growth-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Introduction<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="description-of-the-economy">
+<h3>Description of the economy<a class="headerlink" href="#description-of-the-economy" title="Permalink to this headline">¶</a></h3>
+<p>In this model, time is denoted by <span class="math notranslate nohighlight">\(t\)</span> and is continuous. Population, which is denoted by <span class="math notranslate nohighlight">\(L_t\)</span> is assumed to grow at rate <span class="math notranslate nohighlight">\(n &gt; 0\)</span>, such that:</p>
+<div class="math notranslate nohighlight">
+\[ L_t = L_0 e^{nt}\]</div>
+<p>we require that initial population <span class="math notranslate nohighlight">\(L_0 &gt;0\)</span>, which in the authors opinion is a reasonable one.</p>
+<p>At each period, each individual offers one unit of labour inelastically. The total labour supply can be given by <span class="math notranslate nohighlight">\(L_t\)</span>.</p>
+<div class="section" id="production-technology">
+<h4>Production Technology<a class="headerlink" href="#production-technology" title="Permalink to this headline">¶</a></h4>
+<p>The is a continuum of firms of measure one that combine capital and labour to produce a single, homogenous and undifferentiated final good. These final goods firms operate in a perfectly competitive market.</p>
+<p>The representative firm produces this good subject to a neoclassical technology:</p>
+<div class="math notranslate nohighlight">
+\[Y_t =(K_t, A_tL_t)\]</div>
+<p>This technology combines capital <span class="math notranslate nohighlight">\(K_t\)</span> and labour <span class="math notranslate nohighlight">\(L_t\)</span> to produce output, which is denoted <span class="math notranslate nohighlight">\(Y_t\)</span>. <span class="math notranslate nohighlight">\(A_t\)</span> is the current state of technology, it is a labour augmenting technology which is assumed to directly augment the productivity of labour in the production process.</p>
+<p>The production function <span class="math notranslate nohighlight">\(F(\cdot)\)</span> is assumed to be homogenous in the first degree, such that:</p>
+<div class="math notranslate nohighlight">
+\[ F(\gamma K, \gamma L) = \gamma F(K,L)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is a positive, real number. This property suggests that the production technology possess ‘constant returns to scale’ (CRS). Constant returns to scale suggests that an change in both factors of production of the same scale, <span class="math notranslate nohighlight">\(\gamma\)</span> raises total output at the rate <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
+<p>We can express output in the measurement of efficicency units. In order to do this, divide by <span class="math notranslate nohighlight">\(A_tL_t\)</span>, yielding:</p>
+<div class="math notranslate nohighlight">
+\[ y_t = F(\frac{K_t}{A_tL_t}, 1) = f(k_t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_t = \frac{Y_t}{A_tL_t}\)</span> and <span class="math notranslate nohighlight">\(k_t = \frac{K_t}{A_tL_t}\)</span>.</p>
+<p>The state of technology follows the process:</p>
+<div class="math notranslate nohighlight">
+\[ A_t = A_0 e^{\gamma t}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma &gt; 0\)</span> is the rate of technological progress and, the initial level of technology <span class="math notranslate nohighlight">\(A_0 &gt; 0\)</span>.</p>
+<p>Production, or total output, is assumed to be fully consumed in either consumption or investment, no output is ever wasted:</p>
+<div class="math notranslate nohighlight">
+\[ Y_t = C_t + I_t \]</div>
+<p>The law of motion for capital is governed by a differential equation:</p>
+<div class="math notranslate nohighlight">
+\[\dot K_t = I_t + \delta K_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> is the level of capital depreciation and the initial level of capital is greater than zero, <span class="math notranslate nohighlight">\(K_0 &gt; 0\)</span>.</p>
+<p>We can now develop the feasibility condition for capital, by combining the production function, resource constraint and law of motion for capital and converting to efficiency units, yielding:</p>
+<div class="math notranslate nohighlight">
+\[ \dot k_t = f(k_t) - c_t - (\delta + n + \gamma) k_t \]</div>
+<p><span class="math notranslate nohighlight">\(k_t\)</span> is the capital labour ratio measured in efficiency units. Over time, capital depreciates at rate <span class="math notranslate nohighlight">\(\delta\)</span>, requiring that <span class="math notranslate nohighlight">\(\delta k\)</span> units of output must be invested to maintain the level of capital. Additionally, with population growing at rate <span class="math notranslate nohighlight">\(n\)</span>, in order to keep capital per capita constant <span class="math notranslate nohighlight">\(nk\)</span> units of output must be invested, analogously, since <span class="math notranslate nohighlight">\(k_t\)</span> is measured in efficiency units, <span class="math notranslate nohighlight">\(\gamma k\)</span> units of output must be invested in order to keep capital constant with the growth of technology.</p>
+<p>Now, let us give the technology a function form. For this, we will use the most common of the Neoclassical technologies, the Cobb-Douglass production function:</p>
+<div class="math notranslate nohighlight">
+\[ F(K_t, A_tL_t) = K^\alpha_t (A_tL_t)^{1-\alpha} \]</div>
+<p>where <span class="math notranslate nohighlight">\(1 &gt; \alpha &gt; 0\)</span>. In efficiency units, this can be written:</p>
+<div class="math notranslate nohighlight">
+\[ f(k_t) = k_t^\alpha \]</div>
+</div>
+<div class="section" id="household-preferences">
+<h4>Household Preferences<a class="headerlink" href="#household-preferences" title="Permalink to this headline">¶</a></h4>
+<p>In this model, households belong to an infinitely lived dynasty. The economy is populated by a continuum of households of measure one. The size of the representative household is <span class="math notranslate nohighlight">\(L_t\)</span>.</p>
+<p>The preferences of the household are given by the utility function:</p>
+<div class="math notranslate nohighlight">
+\[ 
+U(C_t, L_t) = L_0 \int_0^\infty u(\hat c_t) e^{(\rho - n)t} \; dt
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat c_t = \frac{C_t}{L_t}\)</span>, or consumption per capita. The utility of each member is measured by the instantaneous utility function <span class="math notranslate nohighlight">\(u(\hat c_t)\)</span>, it is multiplied by <span class="math notranslate nohighlight">\(L_t\)</span> and discounted by the discount factor <span class="math notranslate nohighlight">\(\rho &gt; 0\)</span>. This parameter, <span class="math notranslate nohighlight">\(\rho\)</span>, is the subjective discount rate that households attach to time. The larger the value, the less they value future consumption, implying that they prefer to consumer more today, that is, become more impatient.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="references">
 <h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
 <!-- ## The Neoclassical Growth Model -->
-<p id="id3"><dl class="citation">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">Kal61</a></span></dt>
+<p id="id4"><dl class="citation">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">Kal61</a></span></dt>
 <dd><p>Nicholas Kaldor. <em>Capital Accumulation and Economic Growth</em>, pages 177–222. Palgrave Macmillan UK, London, 1961. URL: <a class="reference external" href="https://doi.org/10.1007/978-1-349-08452-4{\_}10">https://doi.org/10.1007/978-1-349-08452-4{\_}10</a>, <a class="reference external" href="https://doi.org/10.1007/978-1-349-08452-4_10">doi:10.1007/978-1-349-08452-4_10</a>.</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">ONS21</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">ONS21</a></span></dt>
 <dd><p>ONS. Gross domestic product (GDP) QMI. 2021. URL: <a class="reference external" href="https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi">https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi</a>.</p>
 </dd>
 </dl>

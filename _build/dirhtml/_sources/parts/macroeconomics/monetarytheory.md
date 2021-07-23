@@ -37,7 +37,7 @@ $$\label{eq:SUPPLY}
 in this supply function $\pi^e$ represents the inflation expectations of the private sector and
 $\varepsilon$ is a supply shock that increases output without an
 increase in inflation. Inflation only increases output when it exceeds
-inflation, because if $\pi < pi^e \rightarrow \alpha(\pi - \pi^e) < 0$.
+inflation, because if $\pi < \pi^e \rightarrow \alpha(\pi - \pi^e) < 0$.
 It should also be noted that natural output is achieved when the
 realisation of the supply shock is 0 and inflation is equal to
 expectations.
