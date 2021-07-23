@@ -252,7 +252,22 @@
          Household Preferences
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#markets">
+         Markets
+        </a>
+       </li>
       </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#equilibrium">
+       Equilibrium
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#market-clearing-and-equilibrium">
+       Market Clearing and Equilibrium
+      </a>
      </li>
     </ul>
    </li>
@@ -295,11 +310,11 @@ eventually generate in the future - it is important to remember that it omits ev
 <div class="math notranslate nohighlight">
 \[ \frac{\Delta x}{x} = \frac{\Delta X}{X} - \frac{\Delta p}{p} \]</div>
 <p>where <span class="math notranslate nohighlight">\(\frac{\Delta x}{x}\)</span> is the real growth rate, <span class="math notranslate nohighlight">\(\frac{\Delta X}{X}\)</span> is nominal growth and \frac{\Delta p}{p} is the item’s inflation.</p>
-<p>The growth of GDP is an average of these growth rates, weighted by their relative shares in GDP. In practice, the process involves measuring chained quantity indexes <span id="id1">[<a class="reference internal" href="#id5">ONS, 2021</a>]</span>.</p>
+<p>The growth of GDP is an average of these growth rates, weighted by their relative shares in GDP. In practice, the process involves measuring chained quantity indexes <span id="id1">[<a class="reference internal" href="#id7">ONS, 2021</a>]</span>.</p>
 </div>
 <div class="section" id="the-kaldor-facts">
 <h3>The Kaldor Facts<a class="headerlink" href="#the-kaldor-facts" title="Permalink to this headline">¶</a></h3>
-<p>In 1957, Nicholas Kaldor summarized the main properties of long run growth <span id="id2">[<a class="reference internal" href="#id6">Kaldor, 1961</a>]</span>:</p>
+<p>In 1957, Nicholas Kaldor summarized the main properties of long run growth <span id="id2">[<a class="reference internal" href="#id8">Kaldor, 1961</a>]</span>:</p>
 <ol class="simple">
 <li><p>GDP grows at a roughly constant rate.</p></li>
 <li><p>The capital to GDP rate is roughly constant.</p></li>
@@ -308,6 +323,10 @@ eventually generate in the future - it is important to remember that it omits ev
 <li><p>The real wages grows at a roughly constant rate</p></li>
 </ol>
 <p>For any theory of long run economic growth to be plausible, they must adhere to these stylized facts.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since Kaldor’s work in 1957, some of the Kaldor facts have been shown to be inaccurate. It is important to remember when learning these models that they are just models, and real world dynamics and processes are much more complicated than the models suggest.</p>
+</div>
 </div>
 </div>
 <div class="section" id="neoclassical-growth-model">
@@ -368,22 +387,145 @@ eventually generate in the future - it is important to remember that it omits ev
 U(C_t, L_t) = L_0 \int_0^\infty u(\hat c_t) e^{(\rho - n)t} \; dt
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat c_t = \frac{C_t}{L_t}\)</span>, or consumption per capita. The utility of each member is measured by the instantaneous utility function <span class="math notranslate nohighlight">\(u(\hat c_t)\)</span>, it is multiplied by <span class="math notranslate nohighlight">\(L_t\)</span> and discounted by the discount factor <span class="math notranslate nohighlight">\(\rho &gt; 0\)</span>. This parameter, <span class="math notranslate nohighlight">\(\rho\)</span>, is the subjective discount rate that households attach to time. The larger the value, the less they value future consumption, implying that they prefer to consumer more today, that is, become more impatient.</p>
+<p>To give the utility function <span class="math notranslate nohighlight">\(u(c)\)</span> a functional form, we assume that it is exhibits constant intertemporal elasticity of substitution:</p>
+<div class="math notranslate nohighlight">
+\[
+    u(c) = \frac{c^{1-\frac{1}{\sigma}}}{1-\frac{1}{\sigma}}
+\]</div>
+<p>where the parameter <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span> is the intertemporal elasticity of substitution.</p>
 </div>
+<div class="section" id="markets">
+<h4>Markets<a class="headerlink" href="#markets" title="Permalink to this headline">¶</a></h4>
+<p>Firms own capital and they employ labour a the wage rate <span class="math notranslate nohighlight">\(w_t\)</span>. They finance capital by borrowing from households at an interest rate given by <span class="math notranslate nohighlight">\(r_t\)</span>.</p>
+<p>Markets are perfectly competitive. This means that firms and households have no market power, and as such are price takers for price of goods and the wage rate. Prices adjust such that all markets clear. The price is normalised to 1 in every period.</p>
+</div>
+</div>
+<div class="section" id="equilibrium">
+<h3>Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this headline">¶</a></h3>
+<p>In this section, we will solve the model in order to find the equilibrium. The representative firm maximises profits subject to the flow of capital. As mentioned, they take wages and prices as given. The problem of the firm can be written:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\max \int_0^\infty \big[F(K_t, A_tL_t) - w_tL_t - I_t\big] R_t \;d_t \\ \text{} \;\; \dot K_t = I_t - \delta K_t
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(R_t = e^{-\int_0^t r_s\;ds}\)</span> is the market discount factor, a cumulation of the interest rate <span class="math notranslate nohighlight">\(r_s\)</span> on the interval <span class="math notranslate nohighlight">\([0, t]\)</span>. The Hamiltonian for this problem is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{H}_t - F(K_t, A_tL_t) - w_tL_t - I_t + \mu_t(I_t - \delta K_t)
+\]</div>
+<p>In this Hamiltonian, <span class="math notranslate nohighlight">\(L_t\)</span> and <span class="math notranslate nohighlight">\(I_t\)</span> are control variables, <span class="math notranslate nohighlight">\(K_t\)</span> is the the state variable and <span class="math notranslate nohighlight">\(\mu_t\)</span> is the costate which measures the marginal value of capital.</p>
+<p>The First Order Conditions for this problem are <span id="id4">[<a class="reference internal" href="#id10">Chiang, 1992</a>]</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{H_t}}{\partial I} = 0 \rightarrow \mu_t = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{H_t}}{\partial L} = 0 \rightarrow w_t = A_tF_2(K_t,A_tL_t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-\frac{\partial \mathcal{H_t}}{\partial K} = \dot\mu - r\mu \rightarrow \dot\mu - r\mu = F_1(K_t, A_tL_t) + \delta\mu_t
+\]</div>
+<p>From the CRS property of the production function, these first order conditions can be written <a class="footnote-reference brackets" href="#f1" id="id5">1</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_t = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+w_t = (f(k_t) - k_t f'(k_t)) A_t 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+r_t + \delta = f'(k_t)
+\]</div>
+<p>The marginal value of capital <span class="math notranslate nohighlight">\(\mu_t\)</span> is equal to one for all <span class="math notranslate nohighlight">\(t\)</span>. This is an implication of the fact that there is only one good, capital and output can be transmuted into each other at rate one.</p>
+<p>Euler’s theorem yields:</p>
+<div class="math notranslate nohighlight">
+\[
+w_tL_t + (r_t + \delta)K_t = Y_t
+\]</div>
+<p>showing that income is fully distributed to capital and labour.</p>
+<p>The representative household faces the following budget constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\hat a_t} = (r_t - n)\hat a_t + w_t - \hat c_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat a\)</span> is the per capital stock of assets hold by the representative household. The house hold is not able to keep borrowing infinitely, in order to impose this we introduce a No-Ponzi-Game constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{t \rightarrow \infty} \hat a_t L_t R_t \ge 0
+\]</div>
+<p>The household has the following optimisation problem:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\max \int_0^\infty u(\hat c_t)e^{-(\rho-n)t} \;dt \\ \end{split}\\\begin{split}\text{s.t } \dot{\hat a_t = (r_t - n)\hat a_t + w_t - \hat c_t} \\
+\text{and } \lim_{t \rightarrow \infty} \hat a_t L_t R_t \ge 0
+\end{split}\end{aligned}\end{align} \]</div>
+<p>The Hamiltonian for the household’s problem is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{H_t} = u(\hat c_t) + \lambda_t\left((r_t - n) \hat a_t + w_t - \hat c_t\right)
+\]</div>
+<p>The first order conditions for this problem are:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial\mathcal{H}_t}{\partial \hat c_t} =0 \rightarrow u'(\hat c_t) = \lambda_t
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial\mathcal{H}_t}{\partial \hat a_t} =0 \rightarrow -\dot\lambda_t + (\rho - n)\lambda_t \rightarrow (r_t - n)\lambda_t = -\dot\lambda_t + (\rho - n)\lambda_t
+\]</div>
+<p>Notice that the above can be written</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\dot \lambda_t}{\lambda_t} = \rho -r_t
+\]</div>
+<p>Using the functional form for the households utility function we can find the Euler Equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\dot{\hat c_t}}{\hat c_t} = \sigma_t(r_t - \rho)
+\]</div>
+<p>This equation is the optimal allocation of consumption over time. The larger the time-preference parameter <span class="math notranslate nohighlight">\(\rho\)</span>, the higher the household values current consumer, making them more impatient. The interest rate, <span class="math notranslate nohighlight">\(r_t\)</span>, shows the market value of time, larger interest rates means that it becomes relatively more attractive to postpone consumption. When <span class="math notranslate nohighlight">\(r_t &gt; \rho\)</span> the market assigns more value to time than households, making it more attractive to postpone consumption.</p>
+</div>
+<div class="section" id="market-clearing-and-equilibrium">
+<h3>Market Clearing and Equilibrium<a class="headerlink" href="#market-clearing-and-equilibrium" title="Permalink to this headline">¶</a></h3>
+<p>Clearing in the credit market requires that <span class="math notranslate nohighlight">\(\hat a_t L_t = K_t\)</span>. This means that total borrowing is fully allocated to purchasing capital.</p>
+<p>Combining the budget constraint with the optimal demands for labour and capital, we can derive the feasibility condition:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot k_t = f(k_t) - c_t - (\delta + \gamma + n)k_t
+\]</div>
+<p>After some substitution, the Euler Equation can be written:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\dot c_t}{c_t} = \sigma \left(f'(k_t) - \rho - \delta - \frac{\gamma}{\sigma}\right)
+\]</div>
+<p>We can, then, define an equilibrium path for the Neoclassical economy for <span class="math notranslate nohighlight">\(\{c_t, k_t\}, t \ge 0\)</span>, where these conditions hold.</p>
 </div>
 </div>
 </div>
 <div class="section" id="references">
 <h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
 <!-- ## The Neoclassical Growth Model -->
-<p id="id4"><dl class="citation">
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">Kal61</a></span></dt>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id4">Chi92</a></span></dt>
+<dd><p>Chiang, Alpha C. <em>Elements of dynamic optimization / Alpha C. Chiang</em>. McGraw-Hill New York, 1992. ISBN 0070109117.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">Kal61</a></span></dt>
 <dd><p>Nicholas Kaldor. <em>Capital Accumulation and Economic Growth</em>, pages 177–222. Palgrave Macmillan UK, London, 1961. URL: <a class="reference external" href="https://doi.org/10.1007/978-1-349-08452-4{\_}10">https://doi.org/10.1007/978-1-349-08452-4{\_}10</a>, <a class="reference external" href="https://doi.org/10.1007/978-1-349-08452-4_10">doi:10.1007/978-1-349-08452-4_10</a>.</p>
 </dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">ONS21</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">ONS21</a></span></dt>
 <dd><p>ONS. Gross domestic product (GDP) QMI. 2021. URL: <a class="reference external" href="https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi">https://www.ons.gov.uk/economy/grossdomesticproductgdp/methodologies/grossdomesticproductgdpqmi</a>.</p>
 </dd>
 </dl>
 </p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dd><p>From the definition of the production function in efficiency units.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">

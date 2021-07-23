@@ -43,6 +43,10 @@ In 1957, Nicholas Kaldor summarized the main properties of long run growth {cite
 
 For any theory of long run economic growth to be plausible, they must adhere to these stylized facts.
 
+```{warning} 
+Since Kaldor's work in 1957, some of the Kaldor facts have been shown to be inaccurate. It is important to remember when learning these models that they are just models, and real world dynamics and processes are much more complicated than the models suggest. 
+```
+
 
 ## Neoclassical Growth Model
 
@@ -125,6 +129,144 @@ $$
 
 where $\hat c_t = \frac{C_t}{L_t}$, or consumption per capita. The utility of each member is measured by the instantaneous utility function $u(\hat c_t)$, it is multiplied by $L_t$ and discounted by the discount factor $\rho > 0$. This parameter, $\rho$, is the subjective discount rate that households attach to time. The larger the value, the less they value future consumption, implying that they prefer to consumer more today, that is, become more impatient.
 
+To give the utility function $u(c)$ a functional form, we assume that it is exhibits constant intertemporal elasticity of substitution:
+
+$$
+    u(c) = \frac{c^{1-\frac{1}{\sigma}}}{1-\frac{1}{\sigma}}
+$$
+where the parameter $\sigma > 0$ is the intertemporal elasticity of substitution.
+
+#### Markets
+
+Firms own capital and they employ labour a the wage rate $w_t$. They finance capital by borrowing from households at an interest rate given by $r_t$.
+
+Markets are perfectly competitive. This means that firms and households have no market power, and as such are price takers for price of goods and the wage rate. Prices adjust such that all markets clear. The price is normalised to 1 in every period.
+
+
+### Equilibrium
+
+In this section, we will solve the model in order to find the equilibrium. The representative firm maximises profits subject to the flow of capital. As mentioned, they take wages and prices as given. The problem of the firm can be written:
+
+$$ 
+\max \int_0^\infty \big[F(K_t, A_tL_t) - w_tL_t - I_t\big] R_t \;d_t \\ \text{} \;\; \dot K_t = I_t - \delta K_t
+$$
+
+$R_t = e^{-\int_0^t r_s\;ds}$ is the market discount factor, a cumulation of the interest rate $r_s$ on the interval $[0, t]$. The Hamiltonian for this problem is:
+
+$$
+\mathcal{H}_t - F(K_t, A_tL_t) - w_tL_t - I_t + \mu_t(I_t - \delta K_t)
+$$
+In this Hamiltonian, $L_t$ and $I_t$ are control variables, $K_t$ is the the state variable and $\mu_t$ is the costate which measures the marginal value of capital.
+
+
+The First Order Conditions for this problem are {cite:p}`nla.cat-vn609458`:
+
+$$
+\frac{\partial \mathcal{H_t}}{\partial I} = 0 \rightarrow \mu_t = 1
+$$
+
+$$
+\frac{\partial \mathcal{H_t}}{\partial L} = 0 \rightarrow w_t = A_tF_2(K_t,A_tL_t)
+$$
+
+$$
+-\frac{\partial \mathcal{H_t}}{\partial K} = \dot\mu - r\mu \rightarrow \dot\mu - r\mu = F_1(K_t, A_tL_t) + \delta\mu_t
+$$
+
+From the CRS property of the production function, these first order conditions can be written [^f1]:
+
+$$
+\mu_t = 1
+$$
+
+$$
+w_t = (f(k_t) - k_t f'(k_t)) A_t 
+$$
+
+$$
+r_t + \delta = f'(k_t)
+$$
+
+The marginal value of capital $\mu_t$ is equal to one for all $t$. This is an implication of the fact that there is only one good, capital and output can be transmuted into each other at rate one. 
+
+Euler's theorem yields:
+
+$$
+w_tL_t + (r_t + \delta)K_t = Y_t
+$$
+
+showing that income is fully distributed to capital and labour.
+
+The representative household faces the following budget constraint:
+
+$$
+\dot{\hat a_t} = (r_t - n)\hat a_t + w_t - \hat c_t
+$$
+where $\hat a$ is the per capital stock of assets hold by the representative household. The house hold is not able to keep borrowing infinitely, in order to impose this we introduce a No-Ponzi-Game constraint:
+
+$$
+\lim_{t \rightarrow \infty} \hat a_t L_t R_t \ge 0
+$$
+
+The household has the following optimisation problem:
+
+$$
+\max \int_0^\infty u(\hat c_t)e^{-(\rho-n)t} \;dt \\ 
+
+\text{s.t } \dot{\hat a_t = (r_t - n)\hat a_t + w_t - \hat c_t} \\
+\text{and } \lim_{t \rightarrow \infty} \hat a_t L_t R_t \ge 0
+$$
+
+The Hamiltonian for the household's problem is:
+
+$$
+\mathcal{H_t} = u(\hat c_t) + \lambda_t\left((r_t - n) \hat a_t + w_t - \hat c_t\right)
+$$
+
+The first order conditions for this problem are:
+
+$$
+\frac{\partial\mathcal{H}_t}{\partial \hat c_t} =0 \rightarrow u'(\hat c_t) = \lambda_t
+$$
+
+$$
+\frac{\partial\mathcal{H}_t}{\partial \hat a_t} =0 \rightarrow -\dot\lambda_t + (\rho - n)\lambda_t \rightarrow (r_t - n)\lambda_t = -\dot\lambda_t + (\rho - n)\lambda_t
+$$
+
+Notice that the above can be written
+
+$$
+\frac{\dot \lambda_t}{\lambda_t} = \rho -r_t
+$$
+
+Using the functional form for the households utility function we can find the Euler Equation:
+
+$$
+\frac{\dot{\hat c_t}}{\hat c_t} = \sigma_t(r_t - \rho)
+$$
+
+This equation is the optimal allocation of consumption over time. The larger the time-preference parameter $\rho$, the higher the household values current consumer, making them more impatient. The interest rate, $r_t$, shows the market value of time, larger interest rates means that it becomes relatively more attractive to postpone consumption. When $r_t > \rho$ the market assigns more value to time than households, making it more attractive to postpone consumption.
+
+### Market Clearing and Equilibrium
+
+Clearing in the credit market requires that $\hat a_t L_t = K_t$. This means that total borrowing is fully allocated to purchasing capital.
+
+Combining the budget constraint with the optimal demands for labour and capital, we can derive the feasibility condition:
+
+$$
+\dot k_t = f(k_t) - c_t - (\delta + \gamma + n)k_t
+$$
+
+After some substitution, the Euler Equation can be written:
+
+$$
+\frac{\dot c_t}{c_t} = \sigma \left(f'(k_t) - \rho - \delta - \frac{\gamma}{\sigma}\right)
+$$
+
+We can, then, define an equilibrium path for the Neoclassical economy for $\{c_t, k_t\}, t \ge 0$, where these conditions hold.
+
+
+
 
 
 
@@ -132,3 +274,6 @@ where $\hat c_t = \frac{C_t}{L_t}$, or consumption per capita. The utility of ea
 <!-- ## The Neoclassical Growth Model -->
 ```{bibliography} ../../zreferences.bib
 ```
+
+
+[^f1]: From the definition of the production function in efficiency units.
