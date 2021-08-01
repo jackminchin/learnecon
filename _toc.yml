@@ -13,4 +13,6 @@ parts:
     chapters:
     - file: parts/econometric-theory/introduction
     - file: parts/econometric-theory/linearmodels
-
+  - caption: Development Economics
+    chapters:
+    - file: parts/development-econ/introduction
