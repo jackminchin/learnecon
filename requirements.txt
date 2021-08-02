@@ -5,3 +5,5 @@ watchdog
 jupyterlab
 notebook
 ipykernel
+nbconvert~=5.6
+click~=7.1
