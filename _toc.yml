@@ -8,7 +8,7 @@ parts:
     chapters:
     - file: parts/macroeconomics/intro
     - file: parts/macroeconomics/longrungrowth
-    - file: 'parts/macroeconomics/monetarytheory'
+    - file: parts/macroeconomics/monetarytheory
   - caption: Econometric Theory
     chapters:
     - file: parts/econometric-theory/introduction
