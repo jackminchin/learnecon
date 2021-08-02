@@ -1,8 +1,12 @@
+---
+authors: test
+---
+
 # Monetary Theory
 
 ## Evidence on the Impact of Monetary Policy
 
-## Monetarism and the equation of exchange
+### Monetarism and the equation of exchange
 
 In the past, some central banks attempted to stabilising by directly controlling the money supply. Monetarist still favour this approach. The 'equation of exchange' links the money supply $M$ to how often each unit of currency changes hands, known as the velocity of money $V$ to the total volume of spending $P$, and real output in the economy $Y$.
 
@@ -149,7 +153,9 @@ Monetary Shocks
 #### Fisher Equality
 
 Links the nominal interest rate to the expected real interest rate and
-expected inflation $$i \approx r^e + \pi^e$$
+expected inflation 
+
+$$i \approx r^e + \pi^e$$
 
 The mainstream view is that the central bank can influence the real
 interest rate, but only in the short run. In the long run, the real
