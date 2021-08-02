@@ -4,3 +4,4 @@ numpy
 watchdog
 jupyterlab
 notebook
+ipykernel
