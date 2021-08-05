@@ -2,8 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: parts/introduction/intro
 parts:
+  - caption: 
+    chapters:
+    - file: parts/introduction/readings
+    - file: parts/introduction/critiques
   - caption: Macroeconomics
     chapters:
     - file: parts/macroeconomics/intro
