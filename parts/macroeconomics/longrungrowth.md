@@ -60,6 +60,7 @@ In this model, time is denoted by $t$ and is continuous. Population, which is de
 
 $$ L_t = L_0 e^{nt}$$
 
+
 we require that initial population $L_0 >0$, which in the authors opinion is a reasonable one.
 
 At each period, each individual offers one unit of labour inelastically. The total labour supply can be given by $L_t$.
