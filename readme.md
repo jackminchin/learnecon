@@ -42,6 +42,20 @@ Our aim is to have as many people as possible contribute high quality content to
 
 You can work on (nearly) any economics topics you wish. Before you start, please seek approval by creating an issue on the repo, a repository manager will then confirm your topic. You can also contribute to existing sections.
 
+### Adding Citations
+
+In order to add a citation, first either find or create a bibtex style entry and append it to the `zreferences.bib` file in the project root. This can then be cited in the text with: {cite:p
+}\`citationcode\`.
+
+At the bottom of the page, if it doesn't already exist, add a bibliography by:
+```
+# References
+<!-- ## The Neoclassical Growth Model -->
+```{bibliography} ../../zreferences.bib
+:filter: docname in docnames
+```
+
+
 ### Get Credit
 
 coming soon.
