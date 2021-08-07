@@ -33,3 +33,16 @@ this will build and host a version of the book at `https://localhost:8001` and r
 ### Create a pull request 
 
 Create a pull request.
+
+## Authoring Content
+
+Our aim is to have as many people as possible contribute high quality content to the book. Anyone can make a pull request to the repo, adding their content and helping the community. Once you have finished, you can make a pull request that will be reviewed by one of the managers. 
+
+### Choosing Topics
+
+You can work on (nearly) any economics topics you wish. Before you start, please seek approval by creating an issue on the repo, a repository manager will then confirm your topic. You can also contribute to existing sections.
+
+### Get Credit
+
+coming soon.
+
