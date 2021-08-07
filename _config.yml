@@ -5,13 +5,13 @@ title: Learn Economics
 author: Jack Minchin
 
 only_build_toc_files: true
-exclude_patterns: ['**/*.ipynb', '**/.heroku/**/*.*']
+exclude_patterns: ['**/*.ipynb', '**/.heroku/**/*.*','.venv']
 
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'off'
+  execute_notebooks: off
 
 
 # Define the name of the latex output file for PDF builds
