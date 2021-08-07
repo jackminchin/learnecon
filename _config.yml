@@ -5,7 +5,7 @@ title: Learn Economics
 author: Jack Minchin
 
 only_build_toc_files: true
-exclude_patterns: ['**/*.ipynb', '**/.heroku/**/*.*','.venv']
+exclude_patterns: ['**/*.ipynb', '**/.heroku/**/*.*','.venv', '/workspace']
 
 
 # Force re-execution of notebooks on each build.
