@@ -1,3 +1,7 @@
+---
+author: Test
+---
+
 # Readings
 
 ## The Phillips Curve

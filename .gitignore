@@ -4,3 +4,4 @@ _build
 .vscode
 _build/.doctrees
 _build/dirhtml
+.DS_Store
