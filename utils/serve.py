@@ -9,9 +9,11 @@ class Server(http.server.SimpleHTTPRequestHandler):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
 def listen():
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Server) as httpd:
         print("serving at port", PORT)
         httpd.serve_forever()
-    
 
-listen()
+
+if __name__ == "__main__":
+    listen()
